@@ -1,7 +1,8 @@
 # RSA6
 This is a simple implementation of the RSA algorithm in C++ using vectors to hold encrypted data, and strings to hold decrypted data.
 
-**NOTE:** As of now, the algorithm does **NOT** utilise padding when encrypting data, so do not use it to encrypt any actual confidential information.
+**NOTE:** As of now, the algorithm does **NOT** utilise padding when encrypting data, so **do not use it to encrypt any actual confidential information!**
+Sending secret messages between friends would be fine.
 
 ### Main Functions
 
@@ -13,7 +14,7 @@ p and q are two prime numbers, n = p * q, e is the public exponent, and d is the
 
 * RSA_decrypt
   * Input: mpz_class vector, n, d, p, and q
-  * * OR: mpz_class vector, n, and d (slower)
+    * OR: mpz_class vector, n, and d (slower)
   * Output: String containing deciphered ciphertext in readable text
   
 * RSA_keygen
@@ -33,8 +34,8 @@ p and q are two prime numbers, n = p * q, e is the public exponent, and d is the
 * textToVector
 
 ### Current Limitations
-Without padding, encrypted data is very susceptible to a number of attacks (if someone really wanted your data), e.g. a [chosen-plaintext attack](https://en.wikipedia.org/wiki/Chosen-plaintext_attack).
+* Without padding, encrypted data is very susceptible to a number of attacks (if someone really wanted your data), e.g. a [chosen-plaintext attack](https://en.wikipedia.org/wiki/Chosen-plaintext_attack).
 This will be addressed in a future version.
 
-~~Only works for primes of 8-9 digits or less, and with small values of e (3 or 5 seem to work ok).~~
-This has been fixed. RSA keys of up to 8192 bits have been tested and are working correctly.
+* ~~Only works for primes of 8-9 digits or less, and with small values of e (3 or 5 seem to work ok).~~
+Fixed. RSA keys of up to 8192 bits have been tested and are working correctly.
