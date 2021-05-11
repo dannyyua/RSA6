@@ -4,6 +4,8 @@ This is a simple implementation of the RSA algorithm in C++ using vectors to hol
 **NOTE:** As of now, the algorithm does **NOT** utilise padding when encrypting data, so **do not use it to encrypt any actual confidential information!**
 Sending secret messages between friends would be fine.
 
+Requires the MPIR library (including the C++ interface), found [here](https://mpir.org/).
+
 ### Main Functions
 
 p and q are two prime numbers, n = p * q, e is the public exponent, and d is the inverse of e mod λ(n)*
