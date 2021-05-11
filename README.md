@@ -1,38 +1,40 @@
 # RSA6
 This is a simple implementation of the RSA algorithm in C++ using vectors to hold encrypted data, and strings to hold decrypted data.
 
+**NOTE:** As of now, the algorithm does **NOT** utilise padding when encrypting data, so do not use it to encrypt any actual confidential information.
+
 ### Main Functions
 
 p and q are two prime numbers, n = p * q, e is the public exponent, and d is the inverse of e mod λ(n)*
 
 * RSA_encrypt
   * Input: Text to encrypt, n, and e
-  * Output: BigNumber vector containing ciphertext
+  * Output: mpz_class vector containing ciphertext
 
 * RSA_decrypt
-  * Input: BigNumber vector, p, q, and d
-    * OR: BigNumber vector, n, and d **(slow!)**
+  * Input: mpz_class vector, n, d, p, and q
+  * * OR: mpz_class vector, n, and d (slower)
   * Output: String containing deciphered ciphertext in readable text
   
-* RSA_generate
+* RSA_keygen
   * Input: p and q
   * Output: Array containing n, e, and d
+
+* RSA_primegen
+  * Input: RSA bit size
+  * Output: Array containing two prime numbers with bit size half of the input
 
 \* [Carmichael's totient function](https://en.wikipedia.org/wiki/Carmichael_function)
 
 ### Helper Functions
-* isPrime
 * printVector
-* gcd
-* lcm
 * findCoprime
-* findInverse
 * RSA_CRT
-
+* textToVector
 
 ### Current Limitations
-Only works for primes of 8-9 digits or less, and with small values of e (3 or 5 seem to work ok).
+Without padding, encrypted data is very susceptible to a number of attacks (if someone really wanted your data), e.g. a [chosen-plaintext attack](https://en.wikipedia.org/wiki/Chosen-plaintext_attack).
+This will be addressed in a future version.
 
-
-### Credits
-This program utilises the BigNumber library by pr0crustes, found here: https://github.com/pr0crustes/BigNumber
+~~Only works for primes of 8-9 digits or less, and with small values of e (3 or 5 seem to work ok).~~
+This has been fixed. RSA keys of up to 8192 bits have been tested and are working correctly.
