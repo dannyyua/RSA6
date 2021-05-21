@@ -1,8 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <stdbool.h>
-#include <vector>
-#include <mpirxx.h>
+#include "RSA6.hpp"
 
 using namespace std;
 
