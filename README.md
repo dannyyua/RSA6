@@ -1,10 +1,9 @@
 # RSA6
-This is a simple implementation of the RSA (Rivest–Shamir–Adleman) algorithm in C++ using vectors to hold encrypted data, and strings to hold decrypted data.
+This is a simple implementation of the raw RSA (Rivest–Shamir–Adleman) algorithm in C++ using vectors to hold encrypted data, and strings to hold decrypted data.
 
 Requires the MPIR library (including the C++ interface), found [here](https://mpir.org/).
 
-**NOTE:** As of now, the algorithm does **NOT** utilise padding when encrypting data, so **do not use it to encrypt any actual confidential information!**
-Use it as a deterrent.
+**NOTE:** As this is a raw RSA implementation, the algorithm does **NOT** utilise any sort of padding when encrypting data.
 
 ### Main Functions
 
